@@ -1,53 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
- 
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        document.writeln("<h1> Si, javaScript </h1>");
+
+        var fecha = new Date(); 
+        var horas = fecha.getHours();
+        var Textoxd = new String();
+
+        if(horas >= 0 && horas < 12){
+            Textoxd = "Hoal, buenos días";
+
+        }
+
+        if(horas >= 12 && horas < 18){
+            Textoxd = "Hola, buenas tardes";
+
+        }
+
+        if(horas >= 18 && horas < 24){
+            Textoxd = "Hola, buenas noches";
+
+        }
+
+        alert(Textoxd);
+        alert("Bienvenid@ xd, ingresa los datos solicitados...0");
+
+        var nombre = "";
+        var edad = 0;
+        var localidad = "";
+        var profesion = "";
+
+        nombre = prompt("¿Cuál es tu nombre?");
+        edad = prompt("¿Cuál es tu edad?");
+        localidad = prompt("¿Dónde vives?");
+        profesion = prompt("¿A qué te dedicas?");
+
+        var respuesta = confirm("¿Son correctos tus datos?" + " \n Nombre= " + nombre
+            + "\n Edad= " + edad +
+            "\n Localidad= " + localidad + "\n Profesión=" + profesion);
+        if (respuesta) {
         document.writeln("<center>");
         document.writeln("<table border='1'>");
 
-        //regnlón 1
-        document.writeln("<tr>");
-        //col 1
-               document.writeln("<td rowspan='4' >");
-                     document.writeln("foto");
-                      document.writeln("</td>");
+            //regnlón 1
+            document.writeln("<tr>");
+            //col 1
+            document.writeln("<td rowspan='4' >");
+                    document.writeln("foto");
+            document.writeln("</td>");
 
-        // col 2
-                document.writeln("<td>");
-                     document.writeln("<b>Nombre:</b>   José Narvaéz");
-                document.writeln("</td>");
-                      
-        document.writeln("</tr>");
+            // col 2
+            
+                  document.writeln("<td>");
+                      document.writeln("<b>Nombre:</b> " + nombre);
+                  document.writeln("</td>");
 
-        //renglon 2
+            document.writeln("</tr>");
 
-        document.writeln("<tr>");
-            document.writeln("<td>");
-                     document.writeln("<b>Edad:</b>  29 años ");
-                document.writeln("</td>");
-        document.writeln("</tr>");
+            //renglon 2
 
-        //renglon 3
-        document.writeln("<tr>");
-            document.writeln("<td>");
-                     document.writeln("<b>Localidad:</b>   Emiliano Zapata");
-                document.writeln("</td>");
-        document.writeln("</tr>");
+            document.writeln("<tr>");
+                 document.writeln("<td>");
+                     document.writeln("<b>Edad:</b>" + edad +"años ");
+                 document.writeln("</td>");
+            document.writeln("</tr>");
 
-        //renglon 4
-        document.writeln("<tr>");
-            document.writeln("<td>");
-                     document.writeln("<b>Profesión:</b>   Docente");
-                document.writeln("</td>");
-        document.writeln("</tr>");
+            //renglon 3
+            document.writeln("<tr>");
+                 document.writeln("<td>");
+                     document.writeln("<b>Localidad:</b> " + localidad);
+                 document.writeln("</td>");
+            document.writeln("</tr>");
+
+            //renglon 4
+            document.writeln("<tr>");
+                 document.writeln("<td>");
+                     document.writeln("<b>Profesión:</b> " +profesion);
+                 document.writeln("</td>");
+            document.writeln("</tr>");
+
         document.writeln("</table>");
         document.writeln("</center>");
+        } else {
+            alert("Modifica correctamente tus datos");
+        }
+
     </script>
 </head>
 
